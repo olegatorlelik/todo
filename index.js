@@ -16,13 +16,14 @@ btnAddTasck.addEventListener("click", (event) => {
     divInProgress.innerHTML += createElem(elem.title, elem.discription);
   });
 
-  const btnDone = [...document.querySelectorAll(".btnClick")];
-  btnDone.forEach((elem) => {
-    if (elem.id === "done") {
-      elem.addEventListener("click", (event) => {
-        
-      });
-    }
+  const toDoDiv = [...document.querySelectorAll("#rer")];
+  toDoDiv.forEach((elem) => {
+    const divCard = elem.closest("#rer");
+    const btnDone = divCard.querySelector("#done");
+    btnDone.addEventListener("click", (event) => {
+      elem.style.display = "none";
+      
+    });
   });
 });
 
@@ -34,8 +35,9 @@ const getToDoElem = () => {
 
 const createElem = (title, disc) => {
   const div = document.createElement("div");
-  return (div.innerHTML = `<div id="rer" >${title} ${disc}</div>
+  return (div.innerHTML = `<div id="rer" >${title} ${disc}
     <button class = 'btnClick' id = "done">&#10004</button>
     <button class = 'btnClick' id = "re">&#9998</button>
-    <button class = 'btnClick' id = "delet">&#10007</button>`);
+    <button class = 'btnClick' id = "delet">&#10007</button>
+    </div>`);
 };
