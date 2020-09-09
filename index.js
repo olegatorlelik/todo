@@ -21,8 +21,10 @@ btnAddTasck.addEventListener("click", (event) => {
     const divCard = elem.closest("#rer");
     const btnDone = divCard.querySelector("#done");
     btnDone.addEventListener("click", (event) => {
-      elem.style.display = "none";
-      
+      if (event.target.id === "done") {
+        divCard.remove();
+        
+      }
     });
   });
 });
