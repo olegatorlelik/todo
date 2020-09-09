@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.title {
+  color: orchid;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.todo {
+  margin: 20px 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  border: 5px solid rgb(0, 255, 242);
+  border-radius: 30px;
+  background-color: rgba(255, 0, 140, 0.041);
+}
+.todo-input {
+  width: 100%;
+  outline: none;
+  background-color: rgba(128, 0, 32, 0.116);
+  border: 2px solid greenyellow;
+  border-radius: 20px;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  padding: 4px 20px;
+  margin-bottom: 10px;
+}
+
+.todo-btn {
+  width: 100%;
+  padding: 4px 20px;
+  border-radius: 20px;
+  background-color: rgba(128, 0, 32, 0.116);
+  border: 2px solid greenyellow;
+  outline: none;
+}
+.case-tasck {
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.todo__text-tack {
+  color: brown;
+  font-size: 15px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-right: 20px;
+}
+
+.todo__text-tack-btn {
+  border: none;
+  background: none;
+  color: brown;
+  font-size: 15px;
+}
