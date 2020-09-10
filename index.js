@@ -17,14 +17,19 @@ btnAddTasck.addEventListener("click", (event) => {
   });
 
   const toDoDiv = [...document.querySelectorAll("#rer")];
-  toDoDiv.forEach((elem) => {
-    const divCard = elem.closest("#rer");
+  toDoDiv.forEach((elemDiv) => {
+    const divCard = elemDiv.closest("#rer");
     const btnDone = divCard.querySelector("#done");
     btnDone.addEventListener("click", (event) => {
-      if (event.target.id === "done") {
-        divCard.remove();
-        
-      }
+      state.inprogress.forEach((elem) => {
+        if (elem === todoElement) {
+          state.done.push(...state.inprogress.splice(elem, 1));
+          console.log(state.inprogress);
+          console.log(state.done);
+          elemDiv.remove();
+          divDone.innerHTML += createElem(elem.title, elem.discription);
+        }
+      });
     });
   });
 });
@@ -37,9 +42,13 @@ const getToDoElem = () => {
 
 const createElem = (title, disc) => {
   const div = document.createElement("div");
-  return (div.innerHTML = `<div id="rer" >${title} ${disc}
+  return (div.innerHTML = `<div id="rer">${title} ${disc}
     <button class = 'btnClick' id = "done">&#10004</button>
     <button class = 'btnClick' id = "re">&#9998</button>
     <button class = 'btnClick' id = "delet">&#10007</button>
     </div>`);
+};
+
+const deletEndPushElem = () => {
+  state.inprogress.forEach((elem) => {});
 };
