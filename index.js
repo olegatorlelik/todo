@@ -12,6 +12,7 @@ btnAddTasck.addEventListener("click", (event) => {
   inputTitle.value = "";
   inputDiscription.value = "";
   divInProgress.innerHTML = "";
+
   state.inprogress.forEach((elem) => {
     divInProgress.innerHTML += createElem(elem.title, elem.discription);
   });
@@ -21,13 +22,14 @@ btnAddTasck.addEventListener("click", (event) => {
     const divCard = elemDiv.closest("#rer");
     const btnDone = divCard.querySelector("#done");
     btnDone.addEventListener("click", (event) => {
-      state.inprogress.forEach((elem) => {
-        if (elem === todoElement) {
-          state.done.push(...state.inprogress.splice(elem, 1));
-          console.log(state.inprogress);
-          console.log(state.done);
+      state.inprogress.forEach((elemObj) => {
+        if (elemObj === todoElement) {
+          state.done.push(...state.inprogress.splice(elemObj, 1));
           elemDiv.remove();
-          divDone.innerHTML += createElem(elem.title, elem.discription);
+          divDone.innerHTML = "";
+          state.done.forEach((elem) => {
+            divDone.innerHTML += createElem(elem.title, elem.discription);
+          });
         }
       });
     });
